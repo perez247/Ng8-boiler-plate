@@ -1,4 +1,4 @@
-# Layouts folder for Public
+# Layouts folder for Private
 
 The layout is responsible for structuring the look of the application. It gathers the required components together where neccessary.
 

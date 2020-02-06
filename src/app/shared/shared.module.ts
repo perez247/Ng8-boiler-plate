@@ -3,33 +3,48 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SharedComponentsModule } from './modules/shared-components.module';
-import { SharedNotFoundComponent } from './pages/shared-not-found/shared-not-found.component';
+import { SharedComponentsModule } from './modules/shared-modules/shared-components.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgMaterialModule } from './modules/ng-material.module';
+import { AuthService } from './services/api/auth/auth.service';
+import { LocationService } from './services/api/location/location.service';
+import { AuthTokenService } from './services/common/auth-token/auth-token.service';
+import { FormErrorService } from './services/common/form-error/form-error.service';
+import { NotifyService } from './services/common/notify/notify.service';
+import { ErrorInterceptorProvider } from './interceptors/error.interceptor';
+import { JwtInterceptorProvider } from './interceptors/jwt.interceptor';
+import { SharedCommonModule } from './modules/shared-modules/shared-common.module';
+import { SharedServiceModule } from './modules/shared-modules/shared-services.module';
 
 @NgModule({
-  declarations: [SharedNotFoundComponent],
+  declarations: [],
   imports: [
-    CommonModule,
-    RouterModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
+    // The general common module used by the application
+    SharedCommonModule,
+
+    // The shared module tha contains all the services
+    SharedServiceModule,
 
     // All shared components should be stored here
     SharedComponentsModule,
+
+    // Angular material module
+    NgMaterialModule
   ],
 
   exports: [
-    CommonModule,
-    RouterModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    SharedComponentsModule
+    SharedServiceModule,
+    SharedCommonModule,
+    SharedComponentsModule,
+    SharedComponentsModule,
+    NgMaterialModule
   ],
 
-    // Modals used by all should be stored here.
-    entryComponents: []
+  // Modals used by all should be stored here.
+  entryComponents: [],
+
+  providers: [
+  ]
 })
 
 

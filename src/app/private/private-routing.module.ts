@@ -14,6 +14,7 @@ const routes: Routes = [
   // If no route is given then use default route
   {
     path: '',
+    // This points to the home page to show personal posts
     redirectTo: appRoute.private.home.posts('user').$name,
     pathMatch: 'full'
   },
@@ -39,7 +40,7 @@ const routes: Routes = [
 
       // For the post page (default)
       {
-        path: appRoute.public.home().$name,
+        path: appRoute.private.home.posts().$name,
         component: PrivatePostsComponent
       }
 

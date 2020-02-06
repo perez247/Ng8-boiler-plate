@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { PrivateComponentsModule } from './modules/private-components.module';
+import { PrivateRoutingModule } from './private-routing.module';
+import { PrivateComponent } from './private.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [PrivateComponent],
   imports: [
+
+    // Import the routing module
+    PrivateRoutingModule,
 
     // Shared module contains the common entity required by all other modules
     SharedModule,
