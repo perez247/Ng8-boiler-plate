@@ -2,6 +2,8 @@
 
 // Import common scss structures
 @import './custom/common.scss';
+@import './custom/fonts.scss';
+@import './custom/structure.scss';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
