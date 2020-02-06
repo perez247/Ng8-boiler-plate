@@ -1,4 +1,10 @@
-# Eco
+# Boilerplate
+
+## Overview
+
+This is my boiler plate for building an enterprise angular application. It contains already install packages a structure in place. It production size is more than 2mb so if there is a way to compress it then I highly suggest than. Thanks and below is the default Angular procedure.
+
+## Intro
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
 
