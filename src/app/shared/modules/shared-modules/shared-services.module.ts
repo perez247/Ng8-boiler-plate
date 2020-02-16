@@ -7,6 +7,9 @@ import { FormErrorService } from '../../services/common/form-error/form-error.se
 import { NotifyService } from '../../services/common/notify/notify.service';
 import { ErrorInterceptorProvider } from '../../interceptors/error.interceptor';
 import { JwtInterceptorProvider } from '../../interceptors/jwt.interceptor';
+import { PrivateOnlyAuthenticatedUserGaurd } from 'src/app/private/guards/private-only-authenticated-user.guard';
+import { PrivateRedirectAuthenticatedUser } from 'src/app/private/guards/private-redirect-authenticated-user.guard';
+import { SharedLogout } from '../../guards/shared-logout.guard';
 
 @NgModule({
   declarations: [],
@@ -37,6 +40,11 @@ import { JwtInterceptorProvider } from '../../interceptors/jwt.interceptor';
 
     // Before a call is made to the backend add the authToken to it
     JwtInterceptorProvider,
+
+    // Guards
+    PrivateOnlyAuthenticatedUserGaurd,
+    PrivateRedirectAuthenticatedUser,
+    SharedLogout,
   ]
 })
 

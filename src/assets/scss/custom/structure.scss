@@ -1,7 +1,133 @@
 
+// THis is the structure css for rearranging the elements to fit application needs
+
+// Used this to forec element stay on the same line
 .d-inline-block {
   display: inline-block;
   display: -moz-inline-box;
   display: -ms-inline-flexbox;
   display: -webkit-inline-box;
 }
+
+
+// Sidebar open toggle overlay
+.overlay {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  position: fixed;
+  opacity: 0;
+  top: 0px;
+  z-index: 0;
+
+  /* animate the transition */
+  transition: all 0.5s ease-in-out;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 0.7;
+  z-index: 998;
+}
+
+// For the navbar at the top left corner
+.sticky-navbar-logo {
+  position: absolute;
+  top: 9px;
+}
+
+
+// For the sider bar -----------------------------------
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: rgb(233, 233, 233);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 5px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 49vh;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+
+#sidebar {
+  /* don't forget to add all the previously mentioned styles here too */
+  transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px 15px;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  // border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  color: rgb(93, 180, 74);
+}
+
+#sidebar ul li a:hover {
+  color: #7386D5;
+  background: #fff;
+}
+
+
+// #sidebar ul li.active > a, a[aria-expanded="true"] {
+#sidebar ul li.active > a {
+  color: #fff;
+  background: rgb(29, 125, 235);
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+}
+
+// End of side bar -----------------------------------------------

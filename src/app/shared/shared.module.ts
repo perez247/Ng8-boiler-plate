@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedComponentsModule } from './modules/shared-modules/shared-components.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgMaterialModule } from './modules/ng-material.module';
+import { NgMaterialModule } from './modules/vendors/ng-material.module';
 import { AuthService } from './services/api/auth/auth.service';
 import { LocationService } from './services/api/location/location.service';
 import { AuthTokenService } from './services/common/auth-token/auth-token.service';
@@ -15,6 +15,7 @@ import { ErrorInterceptorProvider } from './interceptors/error.interceptor';
 import { JwtInterceptorProvider } from './interceptors/jwt.interceptor';
 import { SharedCommonModule } from './modules/shared-modules/shared-common.module';
 import { SharedServiceModule } from './modules/shared-modules/shared-services.module';
+import { NgIconsModule } from './modules/vendors/ng-icons.module';
 
 @NgModule({
   declarations: [],
@@ -29,7 +30,10 @@ import { SharedServiceModule } from './modules/shared-modules/shared-services.mo
     SharedComponentsModule,
 
     // Angular material module
-    NgMaterialModule
+    NgMaterialModule,
+
+    // Import all the icons to be used by the application
+    NgIconsModule,
   ],
 
   exports: [

@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+// THis is a custom css from bootswatch.com
+@import './vendors/bootstrap.css';
+
 // Import common scss structures
 @import './custom/common.scss';
 @import './custom/fonts.scss';

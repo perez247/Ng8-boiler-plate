@@ -3,6 +3,7 @@ import { SharedNotFoundComponent } from '../../pages/shared-not-found/shared-not
 import { SharedModule } from '../../shared.module';
 import { ValidatorErrorMessageComponent } from '../../validators/validator-error-message/validator-error-message.component';
 import { SharedCommonModule } from './shared-common.module';
+import { SharedSnackbarComponent } from '../../modals/shared-snackbar/shared-snackbar.component';
 
 @NgModule({
 
@@ -19,8 +20,14 @@ import { SharedCommonModule } from './shared-common.module';
 
   // Export components to be used by all modules and components of the shared section
   exports: [
+    SharedNotFoundComponent,
+    ValidatorErrorMessageComponent,
+  ],
 
-  ]
+// Components that are called at runtime: [
+  entryComponents: [
+    SharedSnackbarComponent,
+  ],
 })
 
 

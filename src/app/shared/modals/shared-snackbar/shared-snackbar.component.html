@@ -1,0 +1,18 @@
+
+
+<div class="col-12 text-center bg-white shadow" [className]="iconSet[data.type].cssColor">
+
+  <div class="col-11 text-center m-auto" >
+
+    <!-- Icon to be displayed -->
+    <fa-icon class="mr-1" [icon]="iconSet[data.type].fontIcon"></fa-icon>
+
+    <!-- Message to be displayed -->
+    {{ data.message }}
+  </div>
+
+  <!-- Icon to close the snackbar -->
+  <fa-icon class="float" (click)="closeSnackbar()" [icon]="iconSet['default'].fontIcon"></fa-icon>
+
+
+</div>

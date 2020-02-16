@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-import { Location } from '@angular/common';
-import { NgRedux } from '@angular-redux/store';
-import { IAuthUserAppState, AUTH_USER_INITIAL_STATE, authUserReducer } from './auth-user-state/auth-user-store';
+import { authUserReducer, AUTH_USER_INITIAL_STATE, IAuthUserAppState } from './auth-user-state/auth-user-store';
+import { appStructurerReducer, APP_STRUCTURE_INITIAL_STATE, IStructureAppState } from './structure-state/structure-user-store';
 
 // Kindly ignore this for now
 // Its simply getting the services without performing dependency Injection
@@ -16,6 +15,7 @@ import { IAuthUserAppState, AUTH_USER_INITIAL_STATE, authUserReducer } from './a
  */
 export interface IAppState {
     authUser: IAuthUserAppState;
+    appStructure: IStructureAppState;
 }
 
 /**
@@ -23,12 +23,14 @@ export interface IAppState {
  */
 export const INITIAL_STATE: IAppState = {
     authUser: AUTH_USER_INITIAL_STATE,
+    appStructure: APP_STRUCTURE_INITIAL_STATE
 }
 
 /**
  * @description the reducer that gets the commands to perform actions
  */
 export const rootReducer = combineReducers({
-    authUser: authUserReducer
+    authUser: authUserReducer,
+    appStructure: appStructurerReducer,
 });
 

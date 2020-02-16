@@ -69,8 +69,6 @@ export class AppPublicRoute {
     }
 
     /**
-     * @deprecated Forgot password should replace this. Please do not use and Im testing if you do read the comments
-     * and I'v always wanted to use deprecated. If you did read this send me 'Adogowam' and Ill understand.
      * @description Get the url string for routing to request to reset your password
      * @returns {IRoutePath}
      */

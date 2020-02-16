@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBarConfig, MatSnackBar } from '@angular/material';
+import { SharedSnackbarComponent } from 'src/app/shared/modals/shared-snackbar/shared-snackbar.component';
 
 @Injectable({
   providedIn: 'root'
@@ -11,32 +12,39 @@ export class NotifyService {
 
   // This is just to close the notification I hope someone (or anyone can help me with providing an icon)
   settings = {
-    action : 'close'
+    action : 'x;',
   };
 
   constructor(private toast: MatSnackBar) {
-    this.initializeConfig();
   }
 
   // Basic configuration to on the snackbar before commencing
-  private initializeConfig() {
-    this.config.panelClass = ['bg-light'];
+  private initializeConfig(message: string, type: string) {
+    // this.config.panelClass = ['col-12'];
     this.config.duration = 20000;
     this.config.verticalPosition = 'top';
+    this.config.data = {message, type};
+
+    return this.config;
   }
 
   // This is to ensure the right color shows up when displaying
-  private addCss(className: string) {
-    this.config.panelClass = ['bg-light', 'text-center', className];
-  }
+  // private addCss(className: string) {
+  //   this.config.panelClass = ['bg-light', 'text-center', className];
+  // }
 
   /**
    * @description Displays a success message with a green text and white background
    * @param message Message to be displayed
    */
   success(message: string) {
-    this.addCss('text-success');
-    this.toast.open(message, this.settings.action, {...this.config});
+
+    // Old method
+    // this.addCss('text-danger');
+    // this.toast.open(message, this.settings.action, {...this.config});
+
+    // New method
+    this.toast.openFromComponent(SharedSnackbarComponent, this.initializeConfig(message, 'success'));
   }
 
   /**
@@ -44,8 +52,7 @@ export class NotifyService {
    * @param message Message to be displayed
    */
   error(message: string) {
-    this.addCss('text-danger');
-    this.toast.open(message, this.settings.action, {...this.config});
+    this.toast.openFromComponent(SharedSnackbarComponent, this.initializeConfig(message, 'error'));
   }
 
   /**
@@ -54,8 +61,7 @@ export class NotifyService {
    * @param message Message to be displayed
    */
   warning(message: string) {
-    this.addCss('text-warning');
-    this.toast.open(message, this.settings.action, {...this.config});
+    this.toast.openFromComponent(SharedSnackbarComponent, this.initializeConfig(message, 'warning'));
   }
 
   /**
@@ -63,7 +69,6 @@ export class NotifyService {
    * @param message Message to be displayed
    */
   message(message: string) {
-    this.addCss('text-dark');
-    this.toast.open(message, this.settings.action, {...this.config});
+    this.toast.openFromComponent(SharedSnackbarComponent, this.initializeConfig(message, 'message'));
   }
 }

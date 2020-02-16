@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BotDetectCaptchaModule } from 'angular-captcha';
 
 @NgModule({
   declarations: [],
@@ -12,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    BotDetectCaptchaModule.forRoot({
+      captchaEndpoint: `/api/simple-captcha-endpoint.ashx`
+  }),
   ],
 
   exports: [
@@ -20,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    BotDetectCaptchaModule
   ],
 
   // Modals used by all should be stored here.

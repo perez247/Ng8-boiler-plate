@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+
+  // Api url to the backend
+  serverApi: '/api'
 };

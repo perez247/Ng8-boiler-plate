@@ -2,7 +2,10 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+
+    // kindly ignore this error
     "types": ["jquery"],
+
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
